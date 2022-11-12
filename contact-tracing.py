@@ -52,7 +52,7 @@ MENU
 \033[1m>>>\033[0m ''')
 
 
-    
+    #add information menu
     if menu_list == "1":
         print("ADD AN INFORMATION MENU")
         n = int(input("How many times do you want to enter data?: "))
@@ -86,7 +86,7 @@ MENU
             print(d)
                 
 
-
+    #finder of information
     elif menu_list == "2":
             print("SEARCH FOR SAVED INFORMATION MENU")
             print("\n===========================================================")
@@ -98,6 +98,7 @@ MENU
             print("Your Birthday is "+ d[key_finder]["Birthday"] + ".")
             print("===========================================================")
 
+    #continue or not?
     elif menu_list == "3":
         cnt_again = input("Do you still want to continue? (y/n): ")
         if cnt_again == "y":
