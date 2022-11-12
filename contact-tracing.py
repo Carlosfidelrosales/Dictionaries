@@ -39,8 +39,9 @@
 # Phone number: 1234567890 What do you want to do? (1-3): 3
 # Exit? n
 
-
-menu_list = input('''
+d = {}
+while True:
+    menu_list = input('''
 
 \033[36;3m
 1. Add an Information
@@ -50,23 +51,56 @@ menu_list = input('''
 \033[1m>>>\033[0m ''')
 
 
-if menu_list == "1":
-    print("ADD AN INFORMATION MENU")
-    d = {}
-    n = int(input("How many times do you want to enter data?: "))
-    for i in range(n):
     
-        dict_name = input("Enter the name of child dictionary: ")
+    if menu_list == "1":
+        print("ADD AN INFORMATION MENU")
+        n = int(input("How many times do you want to enter data?: "))
+        for i in range(n):
+        
+            dict_name = input("Enter the name of child dictionary: ")
 
-        d[dict_name] = {}
-        Name = input("Enter name: ")
-        Age = (input("Enter Age: "))
-        Address = input("Enter Address: ")
-        PhoneNumber = (input("Enter Phone Number: "))
-        Nationality = input("Enter Nationality: ")
-        Birthday = input("Enter Birthday: ")
- 
-    
+            d[dict_name] = {}
+            Name = input("Enter name: ")
+            Age = input("Enter Age: ")
+            Address = input("Enter Address: ")
+            PhoneNumber = (input("Enter Phone Number: "))
+            Nationality = input("Enter Nationality: ")
+            Birthday = input("Enter Birthday: ")
+            d[dict_name]["Name"] = Name
+            d[dict_name]["Age"] = Age
+            d[dict_name]["Address"] = Address
+            d[dict_name]["PhoneNumber"] = PhoneNumber
+            d[dict_name]["Nationality"] = Nationality
+            d[dict_name]["Birthday"] = Birthday
+
+            print("\n\nYou Entered your FULL NAME: " + d[dict_name]["Name"])
+            print("You Entered your AGE: " + d[dict_name]["Age"])
+            print("You Entered your ADDRESS: " + d[dict_name]["Address"])
+            print("You Entered your PHONE NUMBER: " + d[dict_name]["PhoneNumber"])
+            print("You Entered your NATIONALITY: " + d[dict_name]["Nationality"])
+            print("You Entered your BIRTHDAY: " + d[dict_name]["Birthday"])
+            print("\n\nYour Data has been Saved!")
+            print(d)
+                
+
+
+    elif menu_list == "2":
+            print("SEARCH FOR EXISTING INFORMATION MENU")
+            key_finder = input("Please enter the key of the person you want to find: ")
+            print("\n===========================================================")
+            print("Your Name is "+ d[key_finder]["Name"] + ".")
+            print("Your Age is "+ d[key_finder]["Address"] + ".")
+            print("Your Address is "+ d[key_finder]["Address"] + ".")
+            print("Your Phone Number is "+ d[key_finder]["PhoneNumber"] + ".")
+            print("Your Nationality is "+ d[key_finder]["Nationality"] + ".")
+            print("Your Birthday is "+ d[key_finder]["Birthday"] + ".")
+            print("===========================================================")
+
+
+
+            
+
+
 
 
 
