@@ -57,7 +57,7 @@ while True:
         n = int(input("How many times do you want to enter data?: "))
         for i in range(n):
         
-            dict_name = input("Enter the name of child dictionary: ")
+            dict_name = input("\nEnter the name of child dictionary: ")
 
             d[dict_name] = {}
             Name = input("Enter name: ")
@@ -79,13 +79,13 @@ while True:
             print("You Entered your PHONE NUMBER: " + d[dict_name]["PhoneNumber"])
             print("You Entered your NATIONALITY: " + d[dict_name]["Nationality"])
             print("You Entered your BIRTHDAY: " + d[dict_name]["Birthday"])
-            print("\n\nYour Data has been Saved!")
+            print("\n\nYour Data has been Saved!\n\n\n")
             print(d)
                 
 
 
     elif menu_list == "2":
-            print("SEARCH FOR EXISTING INFORMATION MENU")
+            print("SEARCH FOR SAVED INFORMATION MENU")
             key_finder = input("Please enter the key of the person you want to find: ")
             print("\n===========================================================")
             print("Your Name is "+ d[key_finder]["Name"] + ".")
@@ -95,6 +95,10 @@ while True:
             print("Your Nationality is "+ d[key_finder]["Nationality"] + ".")
             print("Your Birthday is "+ d[key_finder]["Birthday"] + ".")
             print("===========================================================")
+
+    elif menu_list == "3":
+        cnt_again = input("Do you still want to continue? (y/n): ")
+        
 
 
 
