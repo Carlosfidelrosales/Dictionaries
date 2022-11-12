@@ -44,10 +44,11 @@ while True:
     menu_list = input('''
 
 \033[36;3m
+MENU
 1. Add an Information
 2. Search 
 3. Exit (y/n) \033[0m
-\033[33;1mWhat do you want to do? (1-3) \033[0m\n
+\033[33;1m\n\nWhat do you want to do? (1-3) \033[0m\n
 \033[1m>>>\033[0m ''')
 
 
@@ -57,10 +58,10 @@ while True:
         n = int(input("How many times do you want to enter data?: "))
         for i in range(n):
         
-            dict_name = input("\nEnter the name of child dictionary: ")
+            dict_name = input("\nEnter your Full Name: ")
 
             d[dict_name] = {}
-            Name = input("Enter name: ")
+            Name = input("\n\nEnter your Full Name (For Verification): ")
             Age = input("Enter Age: ")
             Address = input("Enter Address: ")
             PhoneNumber = (input("Enter Phone Number: "))
@@ -73,23 +74,24 @@ while True:
             d[dict_name]["Nationality"] = Nationality
             d[dict_name]["Birthday"] = Birthday
 
+            print("----------------------------------------------------------------")
             print("\n\nYou Entered your FULL NAME: " + d[dict_name]["Name"])
             print("You Entered your AGE: " + d[dict_name]["Age"])
             print("You Entered your ADDRESS: " + d[dict_name]["Address"])
             print("You Entered your PHONE NUMBER: " + d[dict_name]["PhoneNumber"])
             print("You Entered your NATIONALITY: " + d[dict_name]["Nationality"])
             print("You Entered your BIRTHDAY: " + d[dict_name]["Birthday"])
-            print("\n\nYour Data has been Saved!\n\n\n")
+            print("----------------------------------------------------------------")
+            print("\n\nYour Data has been Saved!\n\n")
             print(d)
                 
 
 
     elif menu_list == "2":
             print("SEARCH FOR SAVED INFORMATION MENU")
-            key_finder = input("Please enter the key of the person you want to find: ")
             print("\n===========================================================")
-            print("Your Name is "+ d[key_finder]["Name"] + ".")
-            print("Your Age is "+ d[key_finder]["Address"] + ".")
+            key_finder = input("Please enter your full name: ")
+            print("Your Age is "+ d[key_finder]["Age"] + ".")
             print("Your Address is "+ d[key_finder]["Address"] + ".")
             print("Your Phone Number is "+ d[key_finder]["PhoneNumber"] + ".")
             print("Your Nationality is "+ d[key_finder]["Nationality"] + ".")
@@ -98,7 +100,11 @@ while True:
 
     elif menu_list == "3":
         cnt_again = input("Do you still want to continue? (y/n): ")
-        
+        if cnt_again == "y":
+            continue
+        elif cnt_again == "n":
+            print("\n\n<<< Thank you for using the program! Have a great day! :) >>> ")
+            break
 
 
 
